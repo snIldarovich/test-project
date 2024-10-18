@@ -1,6 +1,9 @@
 import "../scss/style.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal");
+  const close = document.getElementById("close");
+
   const form = document.getElementById("userForm");
 
   const nameInput = form.querySelector('[name="name"]');
@@ -78,10 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(emailInput.value);
     console.log(checkValue);
     console.log("Успешно отправлено");
+    // alert('Успешно отправлено');
+    popup();
     //скрыть прелоадер кнопки
     form.querySelector('.submit-spinner').classList.add('submit-spinner_hide');
   }
-
+  async function popup() {
+    modal.style.display = "block";
+    submitButton.onclick = function() {
+      modal.style.display = "none";
+    };
+    close.onclick = function() {
+      modal.style.display = "none";
+    };
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  }
   async function enableSubmitButton() {
     submitButton.removeAttribute("disabled");
   }
@@ -103,4 +121,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   fetchData();
+
 });
