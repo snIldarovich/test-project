@@ -1,14 +1,5 @@
 import "../scss/style.scss";
 
-//прелоадер при загрузке формы
-window.onload = function () {
-  document.body.classList.add("loaded_hiding");
-  window.setTimeout(function () {
-    document.body.classList.add("loaded");
-    document.body.classList.remove("loaded_hiding");
-  }, 1500);
-};
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("userForm");
 
@@ -31,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const data = await response.json();
     updateFormWithData(data);
+   
   }
 
   //подтягивание данные с GET запроса в форму
@@ -50,6 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(data);
     console.log("Вывод массива с присвоенным значением");
     console.log([...checkboxInputs].map((input) => input.checked));
+    //прелоадер при загрузке формы
+    document.body.classList.add("loaded_hiding");
+    window.setTimeout(function () {
+      document.body.classList.add("loaded");
+      document.body.classList.remove("loaded_hiding");
+    }, 1500);
   }
 
   // отправка POST запроса
