@@ -1,5 +1,7 @@
 @import 'reset.scss';
 @import 'variables.scss';
+@import 'preloader.scss';
+@import 'spinner.scss';
 
 #app {
   background: rgba(#ccc, .35);
@@ -28,23 +30,27 @@
     padding: 40px;
     max-width: 600px;
     background-color:antiquewhite;
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__inner:not(:first-child) {
+      margin-top: 10px;
+    }
     &__label {
-      display: block;
       font-size: 18px;
       line-height: 24px;
-      margin-bottom: 5px;
+      width: 100%;
     }
     &__input {
+      margin-top: 5px;
       padding: 5px;
-      width: 100%;
-      max-width: 400px;
+      width: 100%; 
       border: 1px solid #ccc;
       border-radius: 5px;
       outline: none;
     }
-    &__input + .form__label {
-      margin-top: 10px;
-    }
+
     &__input,
     &__input::placeholder {
       font-size: 14px;
@@ -58,7 +64,15 @@
       line-height: 24px;
       display: block;
       border-radius: 10px;
-      background-color:burlywood
+      background-color:burlywood;
+      transition: all .3s;
+    }
+    &__btn:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+    &__btn:disabled:hover {
+      cursor: not-allowed;
     }
   }
 }

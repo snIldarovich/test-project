@@ -19,23 +19,52 @@
           Личные данные
         </h1>
         <form class="form" action="#" id="userForm">
-          <label class="form__label" for="name">
-            Ваше ФИО:
-          </label>
-          <input class="form__input" type="text" name="name" placeholder="введите ФИО" value="" required>
-          <label class="form__label" for="email">
-            Ваш email:
-          </label>
-          <input class="form__input" type="email" name="email" placeholder="введите email" value="" required>
-          <button class="form__btn" type="submit">
+          <div class="form__inner">
+            <label class="form__label" for="name">
+              Ваше ФИО:
+            </label>
+            <input class="form__input" type="text" name="name" placeholder="введите ФИО" value="" required>
+          </div>
+          <div class="form__inner">
+            <label class="form__label" for="email">
+              Ваш email:
+            </label>
+            <input class="form__input" type="email" name="email" placeholder="введите email" value="" required>
+          </div>
+          <div class="form__inner">
+            <label class="form__label" for="checkbox">
+              Подписаться на рассылку:
+            </label>
+            <input name="checkbox" class="form__checkbox" type="checkbox" checked="" value="option1">
+          </div>
+          <div class="form__inner">
+            <label class="form__label" for="checkbox">
+              Добавить подпись в профиле
+            </label>
+            <input name="checkbox" class="form__checkbox" type="checkbox" checked="" value="option2">
+          </div>
+          <div class="form__inner">
+            <label class="form__label" for="checkbox">
+              Использовать цветовую схему системы
+            </label>
+            <input name="checkbox" class="form__checkbox" type="checkbox" checked="" value="option3">
+          </div>
+          <button class="form__btn" type="submit" disabled>
+            <span class="submit-spinner submit-spinner_hide"> </span>
             Отправить
           </button>
         </form>
-        <div class="result" id="result">
-          
-        </div>
       </main>
     </div>
+    <!-- Прелоадер при загрузке страницы -->
+    <div class="preloader">
+      <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor"
+          d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+        </path>
+      </svg>
+    </div>
+
   </div>
   <script type="module" src="/src/js/main.js"></script>
 </body>
