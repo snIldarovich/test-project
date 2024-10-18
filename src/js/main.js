@@ -78,8 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(emailInput.value);
     console.log(checkValue);
     console.log("Успешно отправлено");
-    submitButton.setAttribute('disabled', 'true');
-    //после отправки кнопка снова задизейблена чтобы скрыть прелоадер кнопки
+    //скрыть прелоадер кнопки
     form.querySelector('.submit-spinner').classList.add('submit-spinner_hide');
   }
 
